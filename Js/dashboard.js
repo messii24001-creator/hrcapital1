@@ -15,6 +15,15 @@ await authReady;
 
 const mobile = localStorage.getItem("userMobile");
 
+// If this browser also has a leftover admin session (e.g. someone
+// tested the admin panel earlier on this device without logging
+// out), clear it — otherwise pages that check "is this an admin?"
+// would wrongly treat this customer as an admin and show everyone's
+// data instead of just theirs.
+if (mobile) {
+  localStorage.removeItem("admin");
+}
+
 // Login Check
 if (!mobile) {
   window.location.href = "index.html";
@@ -211,4 +220,4 @@ if (logoutBtn) {
 
   });
 
-}
+  }
