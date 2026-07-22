@@ -74,3 +74,32 @@ margin:14px auto 0;
 border-radius:14px;
 border:1px solid var(--line);
 }
+
+/* Payment info rows (UPI ID, Name) — same pattern used on admin
+   pages, duplicated here since this page doesn't load admin.css */
+
+.infoRow{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
+font-size:14px;
+gap:12px;
+}
+
+.infoRow:last-child{
+border-bottom:none;
+}
+
+.infoRow b{
+color:var(--muted);
+font-weight:500;
+flex-shrink:0;
+}
+
+.infoRow span{
+font-family:var(--font-mono);
+color:#fff;
+text-align:right;
+word-break:break-all;
+}
