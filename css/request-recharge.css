@@ -1,0 +1,76 @@
+/* Request Recharge — page-specific layout on top of theme.css */
+
+.hrBalanceLine{
+font-size:14px;
+color:var(--text);
+margin-bottom:14px;
+}
+
+.hrBalanceLine .muted{
+color:var(--muted);
+font-size:13px;
+}
+
+.calcBox{
+margin-top:16px;
+border-top:1px solid rgba(255,255,255,.08);
+padding-top:14px;
+}
+
+.calcRow{
+display:flex;
+justify-content:space-between;
+font-size:14px;
+padding:6px 0;
+color:var(--text);
+}
+
+.calcRow.total{
+border-top:1px solid rgba(255,255,255,.08);
+margin-top:6px;
+padding-top:12px;
+font-size:17px;
+font-weight:700;
+color:var(--gold);
+}
+
+.payAmount{
+font-size:36px;
+font-weight:700;
+color:var(--gold);
+text-align:center;
+}
+
+.tabRow{
+display:flex;
+gap:10px;
+margin-bottom:16px;
+}
+
+.tabBtn{
+flex:1;
+height:44px;
+border-radius:999px;
+border:1px solid var(--line);
+background:transparent;
+color:var(--muted);
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+transition:.2s;
+}
+
+.tabBtn.active{
+background:linear-gradient(135deg,var(--purple),var(--purple2));
+color:#fff;
+border-color:transparent;
+}
+
+.qrImage{
+width:100%;
+max-width:220px;
+display:block;
+margin:14px auto 0;
+border-radius:14px;
+border:1px solid var(--line);
+}

@@ -1,0 +1,63 @@
+/* Profile — page-specific layout on top of theme.css */
+
+.avatarBox{
+text-align:center;
+margin-bottom:22px;
+}
+
+.avatarWrap{
+position:relative;
+width:96px;
+height:96px;
+margin:0 auto 14px;
+}
+
+.avatarImg{
+width:96px;
+height:96px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid var(--gold);
+}
+
+.avatarInitial{
+width:96px;
+height:96px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:var(--font-display);
+font-size:34px;
+font-weight:700;
+color:var(--gold);
+background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+border:2px solid rgba(212,175,55,.45);
+}
+
+.avatarEditBtn{
+position:absolute;
+bottom:0;
+right:0;
+width:32px;
+height:32px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--purple),var(--purple2));
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+cursor:pointer;
+border:2px solid var(--bg);
+}
+
+.avatarBox h2{
+font-family:var(--font-display);
+font-size:20px;
+font-weight:700;
+}
+
+.avatarBox .subText{
+font-family:var(--font-mono);
+margin-top:2px;
+}

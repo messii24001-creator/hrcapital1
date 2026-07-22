@@ -1,0 +1,310 @@
+.loginCard h2, .brandName{
+font-family:var(--font-display);
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+position:relative;
+}
+
+.background{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:
+radial-gradient(circle at 20% 20%,rgba(212,175,55,.08),transparent 25%),
+radial-gradient(circle at 80% 80%,rgba(255,215,0,.06),transparent 30%);
+z-index:-1;
+}
+
+/* Container */
+
+.login-container{
+width:100%;
+max-width:420px;
+padding:22px;
+animation:fadeIn .8s ease;
+}
+
+/* Logo */
+
+.logoBox{
+text-align:center;
+margin-bottom:30px;
+}
+/* ===========================
+   Premium Brand Logo
+=========================== */
+
+.brandLogo{
+text-align:center;
+margin-bottom:35px;
+}
+
+.brandIcon{
+width:90px;
+height:90px;
+margin:auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+border:2px solid #D4AF37;
+color:#D4AF37;
+font-size:38px;
+font-weight:700;
+letter-spacing:2px;
+box-shadow:
+0 0 20px rgba(212,175,55,.25),
+0 0 45px rgba(212,175,55,.12);
+animation:logoGlow 3s ease-in-out infinite;
+}
+
+.brandName{
+margin-top:18px;
+font-size:34px;
+font-weight:700;
+color:#fff;
+letter-spacing:.5px;
+}
+
+.brandTag{
+margin-top:8px;
+font-size:14px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#D4AF37;
+}
+
+.logoBox h1{
+margin-top:18px;
+font-size:32px;
+font-weight:700;
+color:#4C1D95;
+}
+
+/* ===========================
+   Logo Section
+=========================== */
+
+.logoBox{
+text-align:center;
+margin-bottom:35px;
+}
+
+.logoCircle{
+width:95px;
+height:95px;
+margin:auto;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+font-weight:700;
+background:linear-gradient(145deg,#1a1a1a,#2a2a2a);
+border:2px solid #D4AF37;
+color:#D4AF37;
+box-shadow:
+0 0 20px rgba(212,175,55,.35),
+0 0 45px rgba(212,175,55,.15);
+animation:logoGlow 3s ease-in-out infinite;
+}
+
+.logoBox h1{
+margin-top:18px;
+font-size:32px;
+font-weight:700;
+color:#ffffff;
+letter-spacing:.5px;
+}
+
+.logoBox p{
+margin-top:8px;
+font-size:15px;
+color:#b8b8b8;
+}
+
+/* ===========================
+   Login Card
+=========================== */
+
+.loginCard{
+background:rgba(18,18,18,.88);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+padding:30px;
+border-radius:28px;
+border:1px solid rgba(212,175,55,.25);
+box-shadow:
+0 15px 40px rgba(0,0,0,.55),
+0 0 20px rgba(212,175,55,.10);
+overflow:hidden;
+}
+
+.loginCard h2{
+font-size:28px;
+color:#ffffff;
+text-align:center;
+font-weight:700;
+}
+
+.subText{
+text-align:center;
+margin:10px 0 25px;
+color:#bfbfbf;
+font-size:15px;
+line-height:1.5;
+}
+
+/* ===========================
+   Premium Input Boxes
+=========================== */
+
+.inputBox{
+display:flex;
+align-items:center;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(212,175,55,.20);
+border-radius:18px;
+padding:15px 18px;
+margin-bottom:18px;
+transition:.35s;
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+}
+
+.inputBox:hover{
+border-color:#D4AF37;
+}
+
+.inputBox:focus-within{
+border-color:#D4AF37;
+box-shadow:
+0 0 0 3px rgba(212,175,55,.12),
+0 0 18px rgba(212,175,55,.18);
+transform:translateY(-2px);
+}
+
+.inputBox .material-icons{
+color:#D4AF37;
+font-size:24px;
+margin-right:14px;
+}
+
+.inputBox input{
+width:100%;
+border:none;
+outline:none;
+background:transparent;
+font-size:16px;
+color:#ffffff;
+font-weight:500;
+}
+
+.inputBox input::placeholder{
+color:#AFAFAF;
+}
+
+/* Login Button */
+
+#loginBtn{
+width:100%;
+padding:17px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#B8860B,#D4AF37,#F5D76E);
+background-size:200% 200%;
+color:#111;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.35s;
+box-shadow:0 10px 25px rgba(212,175,55,.35);
+animation:gradientMove 5s linear infinite;
+}
+
+#loginBtn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(212,175,55,.45);
+}
+
+#loginBtn:active{
+transform:scale(.98);
+}
+
+@keyframes gradientMove{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
+
+/* Admin */
+
+#adminOpen{
+display:block;
+width:100%;
+text-align:center;
+margin-top:16px;
+font-size:13px;
+font-weight:500;
+letter-spacing:1px;
+color:#9CA3AF;
+cursor:pointer;
+user-select:none;
+transition:.3s;
+}
+
+#adminOpen:hover{
+color:#6D28D9;
+}
+
+/* Footer */
+
+.footer{
+text-align:center;
+margin-top:28px;
+font-size:13px;
+color:#888;
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+@keyframes logoGlow{
+
+0%{
+box-shadow:0 15px 35px rgba(109,40,217,.35);
+}
+
+50%{
+box-shadow:0 20px 55px rgba(168,85,247,.60);
+}
+
+100%{
+box-shadow:0 15px 35px rgba(109,40,217,.35);
+}
+
+}

@@ -1,0 +1,287 @@
+/* base reset now comes from theme.css */
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.title h2{
+font-family:var(--font-display);
+}
+
+.container{
+width:100%;
+max-width:420px;
+}
+
+.header{
+display:flex;
+align-items:center;
+margin-bottom:25px;
+}
+
+.backBtn{
+width:42px;
+height:42px;
+border-radius:50%;
+background:#181818;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+border:1px solid rgba(255,215,120,.25);
+}
+
+.title{
+margin-left:15px;
+}
+
+.title h2{
+font-size:24px;
+color:#F6D58A;
+}
+
+.title p{
+font-size:13px;
+opacity:.75;
+}
+
+.rewardCard{
+background:linear-gradient(145deg,#111,#1b1b1b);
+border-radius:24px;
+padding:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.55);
+border:1px solid rgba(255,215,120,.18);
+}
+
+.theme{
+display:flex;
+justify-content:center;
+margin-bottom:18px;
+}
+
+#themeName{
+padding:8px 18px;
+border-radius:30px;
+background:#2a2112;
+color:#FFD978;
+font-weight:bold;
+font-size:14px;
+}
+
+.rewardBox{
+position:relative;
+height:230px;
+border-radius:20px;
+overflow:hidden;
+background:linear-gradient(135deg,#262626,#111);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.rewardText{
+position:absolute;
+text-align:center;
+z-index:1;
+}
+
+.reveal-points{
+font-size:42px;
+font-weight:bold;
+color:#FFD978;
+}
+
+.reveal-small{
+margin-top:10px;
+font-size:18px;
+color:#fff;
+}
+
+#scratchCanvas{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:5;
+cursor:pointer;
+}
+
+.hint{
+margin-top:18px;
+text-align:center;
+opacity:.75;
+font-size:14px;
+}
+
+.claimedCard{
+background:#181818;
+border-radius:20px;
+padding:30px;
+text-align:center;
+margin-top:20px;
+}
+
+.claimedCard h2{
+color:#FFD978;
+margin-bottom:12px;
+}
+
+.goldBtn{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(90deg,#FFD978,#C79A2B);
+color:#111;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+transition:.25s;
+}
+
+.goldBtn:hover{
+transform:scale(1.03);
+}
+/* Loading Screen */
+
+.loadingScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.92);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:9999;
+backdrop-filter:blur(8px);
+}
+
+.loader{
+width:70px;
+height:70px;
+border:6px solid rgba(255,255,255,.15);
+border-top:6px solid #FFD978;
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin-bottom:20px;
+}
+
+.loadingScreen p{
+font-size:17px;
+color:#FFD978;
+font-weight:600;
+letter-spacing:.5px;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* Confetti */
+
+#confetti{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:9998;
+}
+
+/* Scratch Effect */
+
+.rewardBox::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top,
+rgba(255,255,255,.08),
+transparent 65%);
+pointer-events:none;
+z-index:2;
+}
+
+.rewardCard{
+animation:cardPop .45s ease;
+}
+
+@keyframes cardPop{
+0%{
+opacity:0;
+transform:translateY(20px) scale(.95);
+}
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+.goldBtn:active{
+transform:scale(.96);
+}
+
+/* Responsive */
+
+@media(max-width:480px){
+
+.container{
+max-width:100%;
+}
+
+.rewardCard{
+padding:18px;
+}
+
+.rewardBox{
+height:200px;
+}
+
+.reveal-points{
+font-size:34px;
+}
+
+.reveal-small{
+font-size:16px;
+}
+
+.title h2{
+font-size:22px;
+}
+
+.title p{
+font-size:12px;
+}
+
+.goldBtn{
+font-size:15px;
+padding:13px;
+}
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#FFD978;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
