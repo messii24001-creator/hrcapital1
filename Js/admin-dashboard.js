@@ -9,6 +9,10 @@ import {
 
 await authReady;
 
+// Same self-healing as dashboard.js, in reverse — an admin session
+// on this device shouldn't also carry a customer's userMobile.
+localStorage.removeItem("userMobile");
+
 function showToast(message) {
   const toast = document.getElementById("toast");
   if (!toast) { alert(message); return; }
@@ -138,3 +142,4 @@ document.getElementById("logoutBtn").onclick = () => {
     window.location.href = "admin.html";
   }
 };
+  
