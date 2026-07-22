@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Send Notification • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Send Notification</h1>
+            <p class="subText">Promotions, announcements, updates</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="tabRow">
+            <button class="tabBtn active" id="specificTab">👤 One Customer</button>
+            <button class="tabBtn" id="allTab">📢 All Customers</button>
+        </div>
+
+        <div id="specificPanel">
+            <div class="field">
+                <label>Customer Mobile</label>
+                <input type="tel" id="searchMobile" placeholder="Enter customer mobile" maxlength="10">
+            </div>
+            <button class="btnGhost" id="searchBtn">🔍 Search Customer</button>
+
+            <div class="infoRow" style="margin-top:12px;"><b>Name</b><span id="foundName">—</span></div>
+        </div>
+
+        <div id="allPanel" style="display:none;">
+            <p class="subText">This will send the same notification to every registered customer. Use for offers or announcements.</p>
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="field">
+            <label>Type</label>
+            <select id="notifType">
+                <option value="promo">Promotional Offer</option>
+                <option value="system">System Update</option>
+                <option value="admin_announcement">Admin Announcement</option>
+                <option value="bonus_hr">Bonus HR</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Title</label>
+            <input type="text" id="notifTitle" placeholder="e.g. Diwali Bonus Offer!">
+        </div>
+
+        <div class="field">
+            <label>Message</label>
+            <textarea id="notifMessage" rows="4" placeholder="Write your message..."></textarea>
+        </div>
+
+        <button class="btnPrimary" id="sendBtn">
+            <span id="sendBtnText">📤 Send Notification</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/send-notification.js"></script>
+
+</body>
+</html>
