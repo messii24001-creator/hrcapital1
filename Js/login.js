@@ -79,6 +79,7 @@ loginBtn.addEventListener("click", async () => {
 
     } else {
 
+      localStorage.removeItem("admin");
       localStorage.setItem("userMobile", mobile);
 
       window.location.href = "dashboard.html";
