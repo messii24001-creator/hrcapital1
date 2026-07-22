@@ -54,6 +54,7 @@ btn.addEventListener("click", async () => {
 
     } else {
 
+      localStorage.removeItem("userMobile");
       localStorage.setItem("admin", "true");
 
       window.location.href = "admin-dashboard.html";
