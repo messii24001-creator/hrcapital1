@@ -7,7 +7,9 @@ import {
   getDocs,
   updateDoc,
   deleteDoc,
-  doc
+  doc,
+  addDoc,
+  serverTimestamp
 } from "./firebase.js";
 
 await authReady;
@@ -94,11 +96,30 @@ document.getElementById("editBtn").onclick = async () => {
 
   if (newHR == null || newHR.trim() === "" || isNaN(Number(newHR))) return;
 
+  const oldHR = Number(currentCustomer.hrpoint) || 0;
+  const updatedHR = Number(newHR);
+  const delta = updatedHR - oldHR;
+
   try {
 
     await updateDoc(doc(db, "users", currentCustomer.id), {
-      hrpoint: Number(newHR)
+      hrpoint: updatedHR
     });
+
+    if (delta !== 0) {
+      try {
+        await addDoc(collection(db, "walletHistory"), {
+          customerMobile: currentCustomer.mobile,
+          type: "adjustment",
+          source: "general",
+          amount: delta,
+          description: `Manual HR adjustment by admin (${oldHR} → ${updatedHR})`,
+          date: serverTimestamp()
+        });
+      } catch (e) {
+        console.error("Wallet history entry failed (HR still updated):", e);
+      }
+    }
 
     showToast("✅ HR points updated");
     searchBtn.click();
@@ -205,3 +226,4 @@ document.getElementById("deleteBtn").onclick = async () => {
   }
 
 };
+        
