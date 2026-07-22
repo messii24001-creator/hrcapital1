@@ -253,6 +253,26 @@ transition:.2s;
 
 .backBtn:hover{ border-color:rgba(212,175,55,.4); }
 
+/* ============ Page header (back button + title) ============ */
+
+.pageHeader{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:18px;
+}
+
+.pageHeader h1{
+font-size:21px;
+font-weight:700;
+}
+
+.subText{
+margin-top:4px;
+color:var(--muted);
+font-size:13.5px;
+}
+
 @media (prefers-reduced-motion: reduce){
 .skeleton{ animation:none; }
 }
