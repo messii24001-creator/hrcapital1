@@ -10,7 +10,13 @@ import {
 await authReady;
 
 const mobile = localStorage.getItem("userMobile");
-const isAdmin = localStorage.getItem("admin") === "true";
+
+// If a customer session exists, always treat this as the customer
+// view — even if a leftover admin flag is also sitting in
+// localStorage from an earlier session on this device. Showing
+// everyone's data to a customer would be a real privacy leak, so
+// customer session takes priority whenever both are present.
+const isAdmin = !mobile && localStorage.getItem("admin") === "true";
 
 // Only bounce out if neither a customer nor an admin is signed in.
 if (!mobile && !isAdmin) {
