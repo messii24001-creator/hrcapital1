@@ -61,3 +61,30 @@ font-weight:700;
 font-family:var(--font-mono);
 margin-top:2px;
 }
+
+/* Stats info rows (Joining Date, Total Recharge, etc.) */
+
+.infoRow{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
+font-size:14px;
+gap:12px;
+}
+
+.infoRow:last-child{
+border-bottom:none;
+}
+
+.infoRow b{
+color:var(--muted);
+font-weight:500;
+flex-shrink:0;
+}
+
+.infoRow span{
+font-family:var(--font-mono);
+color:#fff;
+text-align:right;
+}
