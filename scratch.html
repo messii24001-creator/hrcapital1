@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HR Capital Scratch Card</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/scratch.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div class="backBtn"
+onclick="location.href='dashboard.html'">
+
+←
+
+</div>
+
+<div class="title">
+
+<h2>HR Capital</h2>
+
+<p>Rewards Program</p>
+
+</div>
+
+</div>
+
+<div class="rewardCard">
+
+<div class="theme">
+
+<span id="themeName">
+
+Lucky Gold
+
+</span>
+
+</div>
+
+<div class="rewardBox">
+
+<div class="rewardText">
+
+<div class="reveal-points">
+
+100 HR
+
+</div>
+
+<div class="reveal-small">
+
+Congratulations
+
+</div>
+
+</div>
+
+<canvas id="scratchCanvas"></canvas>
+
+</div>
+
+<p class="hint">
+
+Scratch the card to reveal your reward
+
+</p>
+
+</div>
+
+<div id="claimedCard"
+class="claimedCard"
+style="display:none;">
+
+<h2>
+
+🎉 Reward Already Claimed
+
+</h2>
+
+<p>
+
+This reward has already been redeemed.
+
+</p>
+
+<button
+class="goldBtn"
+onclick="location.href='dashboard.html'">
+
+Back To Dashboard
+
+</button>
+
+</div>
+
+<div id="noCard"
+class="claimedCard"
+style="display:none;">
+
+<h2>
+
+🎁 No Scratch Card
+
+</h2>
+
+<p>
+
+No scratch card is available right now.
+
+</p>
+
+<button
+class="goldBtn"
+onclick="location.href='dashboard.html'">
+
+Back
+
+</button>
+
+</div>
+<div id="confetti"></div>
+
+<div id="loadingScreen" class="loadingScreen" style="display:none;">
+    <div class="loader"></div>
+    <p>Claiming your reward...</p>
+</div>
+
+</div>
+
+<script type="module" src="Js/scratch.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>

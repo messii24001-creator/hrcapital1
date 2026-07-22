@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HR Settings • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>HR Settings</h1>
+            <p class="subText">Controls how HR points work app-wide</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="field">
+            <label>HR Conversion Rate (HR per ₹1)</label>
+            <input type="number" id="conversionRate" placeholder="10" min="1">
+            <p class="settingsHint">e.g. 10 means 10 HR = ₹1</p>
+        </div>
+
+        <div class="field">
+            <label>Minimum Redeemable HR</label>
+            <input type="number" id="minRedeem" placeholder="0" min="0">
+            <p class="settingsHint">Smallest HR amount a customer can redeem at once (0 = no minimum)</p>
+        </div>
+
+        <div class="field">
+            <label>Maximum Redeemable HR (per recharge)</label>
+            <input type="number" id="maxRedeem" placeholder="Leave blank for no limit" min="0">
+        </div>
+
+        <div class="field">
+            <label>Minimum Recharge Amount Eligible for HR (₹)</label>
+            <input type="number" id="minRechargeForHR" placeholder="0" min="0">
+            <p class="settingsHint">Recharges below this amount can't redeem HR</p>
+        </div>
+
+        <div class="field">
+            <label>HR Earn Rate (HR per ₹1 recharged)</label>
+            <input type="number" id="earnRate" placeholder="0" min="0" step="0.1">
+            <p class="settingsHint">Used as the suggested bonus HR when approving a request</p>
+        </div>
+
+        <div class="field">
+            <label>HR Expiry (days)</label>
+            <input type="number" id="expiryDays" placeholder="Leave blank for no expiry" min="0">
+            <p class="settingsHint">⚠️ Stored only for now — automatic expiry isn't enforced yet (needs a scheduled Cloud Function, see chat notes)</p>
+        </div>
+
+    </div>
+
+    <button class="btnPrimary" id="saveBtn">
+        <span id="saveBtnText">💾 Save Settings</span>
+    </button>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/hr-settings.js"></script>
+
+</body>
+</html>

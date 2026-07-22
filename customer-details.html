@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customer Details • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Customer Details</h1>
+            <p class="subText">Search, edit, or remove a customer</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="field">
+            <label>Mobile Number</label>
+            <input type="tel" id="searchMobile" placeholder="Enter mobile number" maxlength="10">
+        </div>
+        <button class="btnGhost" id="searchBtn">🔍 Search Customer</button>
+    </div>
+
+    <div class="panel">
+
+        <h3>Details</h3>
+
+        <div class="infoRow"><b>Name</b><span id="name">-</span></div>
+        <div class="infoRow"><b>Mobile</b><span id="mobile">-</span></div>
+        <div class="infoRow"><b>HR Points</b><span id="hrpoint">-</span></div>
+        <div class="infoRow"><b>Rank</b><span id="rank">-</span></div>
+        <div class="infoRow"><b>Status</b><span id="status">-</span></div>
+
+        <div style="margin-top:16px; display:flex; flex-direction:column; gap:10px;">
+            <button class="btnGhost" id="editBtn">✏️ Edit HR Points</button>
+            <button class="btnDanger" id="deleteBtn">🗑️ Delete Customer</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/customer-details.js"></script>
+
+</body>
+</html>

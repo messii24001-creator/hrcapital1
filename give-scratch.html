@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Give Scratch Card • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Give Scratch Card</h1>
+            <p class="subText">Search customer and assign a reward</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="field">
+            <label>Customer Mobile</label>
+            <input type="tel" id="searchMobile" placeholder="Enter customer mobile" maxlength="10">
+        </div>
+        <button class="btnGhost" id="searchBtn">🔍 Search Customer</button>
+    </div>
+
+    <div class="panel">
+        <h3>Customer</h3>
+        <div class="infoRow"><b>Name</b><span id="name">-</span></div>
+        <div class="infoRow"><b>Customer ID</b><span id="customerId">-</span></div>
+        <div class="infoRow"><b>Current HR</b><span id="hrpoint">0</span></div>
+    </div>
+
+    <div class="panel">
+
+        <div class="field">
+            <label>Given For</label>
+            <select id="rewardSource">
+                <option value="general">General / Loyalty</option>
+                <option value="recharge">Recharge</option>
+                <option value="voucher">Voucher Purchase</option>
+            </select>
+            <p class="settingsHint">Shows up in the customer's Wallet History so they know why they got it.</p>
+        </div>
+
+        <div class="field">
+            <label>Reward Type</label>
+            <select id="rewardType">
+                <option value="HR">HR Points</option>
+                <option value="Voucher">Voucher (gift code)</option>
+            </select>
+        </div>
+
+        <div id="hrFields">
+            <div class="field">
+                <label>Reward Value (HR)</label>
+                <input type="number" id="rewardValue" placeholder="e.g. 20" min="1">
+            </div>
+        </div>
+
+        <div id="voucherFields" style="display:none;">
+
+            <div class="field">
+                <label>Voucher Title</label>
+                <input type="text" id="voucherTitle" placeholder="e.g. Amazon Gift Card">
+            </div>
+
+            <div class="field">
+                <label>Voucher Code</label>
+                <input type="text" id="voucherCode" placeholder="e.g. AMZN-1234-5678">
+            </div>
+
+            <div class="field">
+                <label>Voucher Value (₹)</label>
+                <input type="number" id="voucherValue" placeholder="e.g. 500" min="1">
+            </div>
+
+        </div>
+
+        <div class="field">
+            <label>Scratch Theme</label>
+            <select id="theme">
+                <option>Lucky Gold</option>
+                <option>Diamond</option>
+                <option>Festival</option>
+                <option>Birthday</option>
+                <option>Surprise Box</option>
+            </select>
+        </div>
+
+        <button class="btnPrimary" id="saveBtn">
+            <span id="saveBtnText">🎁 Give Scratch Card</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/give-scratch.js"></script>
+
+</body>
+</html>

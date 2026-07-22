@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Recharge • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Add Recharge</h1>
+            <p class="subText">Search customer and log a recharge</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="field">
+            <label>Customer Mobile</label>
+            <input type="tel" id="searchMobile" placeholder="Enter customer mobile" maxlength="10">
+        </div>
+        <button class="btnGhost" id="searchBtn">🔍 Search Customer</button>
+    </div>
+
+    <div class="panel">
+        <h3>Customer</h3>
+        <div class="infoRow"><b>Name</b><span id="name">-</span></div>
+        <div class="infoRow"><b>Mobile</b><span id="mobile">-</span></div>
+        <div class="infoRow"><b>Current HR</b><span id="currentHR">-</span></div>
+    </div>
+
+    <div class="panel">
+
+        <div class="field">
+            <label>Recharge Number</label>
+            <input type="text" id="rechargeNumber" placeholder="Mobile / DTH / account number">
+        </div>
+
+        <div class="field">
+            <label>Recharge Amount (₹)</label>
+            <input type="number" id="amount" placeholder="e.g. 299" min="1">
+        </div>
+
+        <div class="field">
+            <label>HR Points Earned</label>
+            <input type="number" id="hrEarned" placeholder="e.g. 20" min="1">
+        </div>
+
+        <div class="field">
+            <label>Payment Mode</label>
+            <select id="paymentMode">
+                <option>Cash</option>
+                <option>Online</option>
+            </select>
+        </div>
+
+        <button class="btnPrimary" id="saveRecharge">
+            <span id="saveRechargeText">⚡ Save Recharge</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/add-recharge.js"></script>
+
+</body>
+
+</html>

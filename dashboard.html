@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard • HR Capital</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="pageShell">
+
+<!-- ================= HEADER ================= -->
+
+<div class="header">
+
+    <div class="headerTop">
+
+        <div class="brand">
+
+            <div class="logoCircle">
+                HR
+            </div>
+
+            <div class="brandInfo">
+                <h1>HR Capital</h1>
+                <p>Rewards Program</p>
+            </div>
+
+        </div>
+
+        <div class="notify">
+
+            <button class="notifyBtn" id="notificationBtn" aria-label="Notifications">
+
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3C9.7 3 8 4.8 8 7V10.5L6.5 13.5H17.5L16 10.5V7C16 4.8 14.3 3 12 3Z"
+                        stroke="#D4AF37"
+                        stroke-width="1.8"/>
+                    <path d="M10.5 17C10.8 17.8 11.3 18.2 12 18.2C12.7 18.2 13.2 17.8 13.5 17"
+                        stroke="#D4AF37"
+                        stroke-width="1.8"/>
+                </svg>
+
+                <span class="notifyBadge" id="notifyBadge" style="display:none;">
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= WELCOME ================= -->
+
+<div class="welcomeBox">
+
+    <span>Hello 👋</span>
+
+    <h2 id="customerName">
+        <span class="skeleton skeletonText"></span>
+    </h2>
+
+    <p class="walletTitle">
+        Rewards Wallet
+    </p>
+
+    <div class="idRow">
+
+        <p class="customerInfo">
+            Customer ID
+            <span id="customerId">—</span>
+        </p>
+
+        <p class="customerInfo">
+            Mobile
+            <span id="customerMobile">—</span>
+        </p>
+
+    </div>
+
+</div>
+
+<!-- ================= WALLET ================= -->
+
+<div class="pointsCard">
+
+    <div class="cardShine"></div>
+
+    <div class="walletTop">
+
+        <div>
+
+            <p class="small">
+                Available Balance
+            </p>
+
+            <h1 id="hrPoints" class="mono">
+                0 <span class="unit">HR</span>
+            </h1>
+
+            <p class="worth mono">
+                ≈ ₹<span id="hrValue">0</span>
+            </p>
+
+        </div>
+
+        <span class="liveBadge" id="memberBadge">
+            🥉 Bronze
+        </span>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="lastRechargeRow">
+
+        <div class="lastRecharge">
+            <p>Last Recharge</p>
+            <h4 id="lastRecharge" class="mono">—</h4>
+        </div>
+
+        <div class="rankPill">
+            <p>Your Rank</p>
+            <h4 id="rank" class="mono">—</h4>
+        </div>
+
+    </div>
+
+</div>
+<!-- ================= ACTION GRID ================= -->
+
+<div class="grid">
+
+    <div class="card" id="rechargeBtn">
+        <div class="icon">
+            <!-- Recharge SVG -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="5" width="20" height="14" rx="3" stroke="#D4AF37" stroke-width="1.8"/>
+                <path d="M2 9H22" stroke="#D4AF37" stroke-width="1.8"/>
+                <circle cx="7" cy="15" r="1.2" fill="#D4AF37"/>
+            </svg>
+        </div>
+        <h3>Recharge</h3>
+    </div>
+
+    <div class="card" id="scratchBtn">
+        <div class="icon emoji">🎁</div>
+        <h3>Scratch Card</h3>
+    </div>
+
+    <div class="card" id="walletHistoryBtn">
+        <div class="icon emoji">💼</div>
+        <h3>Wallet History</h3>
+    </div>
+
+    <div class="card" id="historyBtn">
+        <div class="icon emoji">📜</div>
+        <h3>Recharge History</h3>
+    </div>
+
+    <div class="card" id="notificationCard">
+        <div class="icon emoji">🔔</div>
+        <h3>Notifications</h3>
+    </div>
+
+    <div class="card" id="leaderboardBtn">
+        <div class="icon emoji">🏆</div>
+        <h3>Leaderboard</h3>
+    </div>
+
+    <div class="card" id="profileBtn">
+        <div class="icon emoji">👤</div>
+        <h3>Profile</h3>
+    </div>
+
+    <div class="card" id="vouchersBtn">
+        <div class="icon emoji">🎟️</div>
+        <h3>My Vouchers</h3>
+    </div>
+
+</div>
+
+<!-- ================= LOGOUT ================= -->
+
+<div class="logoutBox">
+
+    <button id="logoutBtn">
+        Logout
+    </button>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+    © 2026 HR Capital Rewards Program
+</div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Vouchers • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/my-vouchers.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='dashboard.html'">←</button>
+        <div>
+            <h1>My Vouchers</h1>
+            <p class="subText">Gift codes you've won</p>
+        </div>
+    </div>
+
+    <div id="voucherList">
+        <div class="emptyState">
+            <div class="icon">⏳</div>
+            Loading...
+        </div>
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/my-vouchers.js"></script>
+
+</body>
+</html>

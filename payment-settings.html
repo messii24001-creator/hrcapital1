@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Settings • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Payment Settings</h1>
+            <p class="subText">Controls what customers see at checkout</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="toggleRow">
+            <div>
+                <h3 style="margin-bottom:2px;">Online Payment</h3>
+                <p class="subText">UPI / QR checkout</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="onlineEnabled">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="field">
+            <label>UPI ID</label>
+            <input type="text" id="upiId" placeholder="e.g. hrcapital@upi">
+        </div>
+
+        <div class="field">
+            <label>Account Holder Name</label>
+            <input type="text" id="accountHolder" placeholder="e.g. HR Capital Store">
+        </div>
+
+        <div class="field">
+            <label>Mobile Number</label>
+            <input type="tel" id="upiMobile" placeholder="Linked mobile number" maxlength="10">
+        </div>
+
+        <div class="field">
+            <label>QR Code</label>
+            <input type="file" id="qrFile" accept="image/*">
+            <img id="qrPreview" class="qrPreview" style="display:none;">
+        </div>
+
+        <div class="field">
+            <label>Payment Instructions</label>
+            <textarea id="instructions" rows="3" placeholder="e.g. Pay exact amount and tap 'I Have Paid'"></textarea>
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="toggleRow">
+            <div>
+                <h3 style="margin-bottom:2px;">Cash Payment</h3>
+                <p class="subText">Pay in person at the shop</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="cashEnabled" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <button class="btnPrimary" id="saveBtn">
+        <span id="saveBtnText">💾 Save Settings</span>
+    </button>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/payment-settings.js"></script>
+
+</body>
+</html>

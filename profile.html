@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/profile.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='dashboard.html'">←</button>
+        <div>
+            <h1>Profile</h1>
+            <p class="subText">Manage your account</p>
+        </div>
+    </div>
+
+    <div class="avatarBox">
+        <div class="avatarWrap">
+            <img id="avatarImg" class="avatarImg" style="display:none;">
+            <div id="avatarInitial" class="avatarInitial">—</div>
+            <label for="photoFile" class="avatarEditBtn">✏️</label>
+            <input type="file" id="photoFile" accept="image/*" style="display:none;">
+        </div>
+        <h2 id="profileName">—</h2>
+        <p class="subText" id="profileId">—</p>
+    </div>
+
+    <div class="panel">
+        <h3>Stats</h3>
+        <div class="infoRow"><b>Joining Date</b><span id="joinDate">—</span></div>
+        <div class="infoRow"><b>Total Recharge</b><span id="totalRecharge">—</span></div>
+        <div class="infoRow"><b>Total HR Earned</b><span id="totalHREarned">—</span></div>
+        <div class="infoRow"><b>Current Rank</b><span id="currentRank">—</span></div>
+    </div>
+
+    <div class="panel">
+
+        <h3>Edit Details</h3>
+
+        <div class="field">
+            <label>Name</label>
+            <input type="text" id="nameInput" placeholder="Your name">
+        </div>
+
+        <div class="field">
+            <label>Email</label>
+            <input type="email" id="emailInput" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+            <label>New Password</label>
+            <input type="password" id="passwordInput" placeholder="Leave blank to keep current password">
+        </div>
+
+        <button class="btnPrimary" id="saveBtn">
+            <span id="saveBtnText">💾 Save Changes</span>
+        </button>
+
+    </div>
+
+    <button class="btnDanger" id="logoutBtn" style="margin-top:4px;">Logout</button>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/profile.js"></script>
+
+</body>
+</html>

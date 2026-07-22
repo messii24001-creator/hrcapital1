@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Request Recharge • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/request-recharge.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='dashboard.html'">←</button>
+        <div>
+            <h1>Request Recharge</h1>
+            <p class="subText">Redeem HR points, pay the rest</p>
+        </div>
+    </div>
+
+    <!-- ============ STEP 1: DETAILS ============ -->
+
+    <div id="step1">
+
+        <div class="panel">
+            <h3>Recharge Details</h3>
+
+            <div class="field">
+                <label>Operator</label>
+                <select id="operator">
+                    <option>Jio</option>
+                    <option>Airtel</option>
+                    <option>Vi</option>
+                    <option>BSNL</option>
+                    <option>DTH</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Recharge Number</label>
+                <input type="text" id="rechargeNumber" placeholder="Mobile / DTH number" maxlength="15">
+            </div>
+
+            <div class="field">
+                <label>Recharge Amount (₹)</label>
+                <input type="number" id="amount" placeholder="e.g. 299" min="1">
+            </div>
+        </div>
+
+        <div class="panel">
+
+            <h3>Redeem HR Points</h3>
+
+            <p class="hrBalanceLine">
+                Available: <span id="availableHR" class="mono">—</span> HR
+                <span class="muted">(≈ ₹<span id="availableHRValue" class="mono">0</span>)</span>
+            </p>
+
+            <div class="field">
+                <label>HR to redeem</label>
+                <input type="number" id="hrRedeem" placeholder="0" min="0" value="0">
+                <p class="settingsHint" id="hrRedeemHint"></p>
+            </div>
+
+            <button class="btnGhost" id="useMaxBtn" type="button">Use Maximum</button>
+
+            <div class="calcBox">
+                <div class="calcRow"><span>Recharge Amount</span><span id="calcAmount" class="mono">₹0</span></div>
+                <div class="calcRow"><span>HR Redeemed Value</span><span id="calcHRValue" class="mono">− ₹0</span></div>
+                <div class="calcRow total"><span>You Pay</span><span id="calcRemaining" class="mono">₹0</span></div>
+            </div>
+
+        </div>
+
+        <button class="btnPrimary" id="continueBtn">Continue to Payment →</button>
+
+    </div>
+
+    <!-- ============ STEP 2: PAYMENT ============ -->
+
+    <div id="step2" style="display:none;">
+
+        <div class="panel">
+            <h3>Amount to Pay</h3>
+            <h1 class="payAmount mono" id="payAmount">₹0</h1>
+        </div>
+
+        <div class="panel">
+
+            <div class="tabRow">
+                <button class="tabBtn active" id="onlineTab">💳 Online</button>
+                <button class="tabBtn" id="cashTab">💵 Cash</button>
+            </div>
+
+            <div id="onlinePanel">
+
+                <div id="onlineConfigured" style="display:none;">
+                    <div class="infoRow"><b>UPI ID</b><span id="upiId">—</span></div>
+                    <div class="infoRow"><b>Name</b><span id="upiName">—</span></div>
+                    <button class="btnGhost" id="copyUpiBtn">📋 Copy UPI ID</button>
+                    <img id="qrImage" class="qrImage" style="display:none;">
+                    <p class="subText" id="payInstructions" style="margin-top:10px;"></p>
+                    <button class="btnGold" id="paidBtn" style="margin-top:14px;">✅ I Have Paid</button>
+                </div>
+
+                <div id="onlineNotConfigured" style="display:none;">
+                    <p class="subText">Online payment details haven't been set up by the shop yet. Please choose Cash for now.</p>
+                </div>
+
+            </div>
+
+            <div id="cashPanel" style="display:none;">
+                <p class="subText">Pay the amount in cash directly at the shop. Your request will be marked as waiting for cash verification.</p>
+                <button class="btnGold" id="cashConfirmBtn" style="margin-top:14px;">💵 Confirm Cash Payment</button>
+            </div>
+
+        </div>
+
+        <button class="btnGhost" id="backToStep1">← Edit Details</button>
+
+    </div>
+
+    <!-- ============ STEP 3: SUCCESS ============ -->
+
+    <div id="step3" class="panel" style="display:none; text-align:center;">
+        <div style="font-size:42px; margin-bottom:10px;">⏳</div>
+        <h3 id="successTitle">Request Submitted</h3>
+        <p class="subText" id="successText">Your recharge request is pending verification.</p>
+        <button class="btnPrimary" style="margin-top:18px;" onclick="location.href='dashboard.html'">Back to Dashboard</button>
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/request-recharge.js"></script>
+
+</body>
+</html>

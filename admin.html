@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+
+<div class="shell adminLoginShell">
+
+<div class="adminLogo">🛡️</div>
+
+<h1>HR Capital</h1>
+<p class="subText">Administrator Login</p>
+
+<div class="panel">
+
+    <div class="field">
+        <label>Admin Mobile</label>
+        <input type="tel" id="adminMobile" placeholder="Enter admin mobile" maxlength="10">
+    </div>
+
+    <div class="field">
+        <label>Admin Password</label>
+        <input type="password" id="adminPassword" placeholder="Enter admin password">
+    </div>
+
+    <button class="btnGold" id="adminLoginBtn">
+        <span id="adminLoginText">Admin Login</span>
+    </button>
+
+</div>
+
+<a class="backLink" href="index.html">← Back to Customer Login</a>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Customer • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="pageHeader">
+        <button class="backBtn" onclick="location.href='admin-dashboard.html'">←</button>
+        <div>
+            <h1>Add Customer</h1>
+            <p class="subText">Create a new HR Capital customer</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="field">
+            <label>Customer Name</label>
+            <input type="text" id="name" placeholder="Full name">
+        </div>
+
+        <div class="field">
+            <label>Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="10-digit mobile number" maxlength="10">
+        </div>
+
+        <button class="btnPrimary" id="addCustomerBtn">
+            <span id="addCustomerText">➕ Add Customer</span>
+        </button>
+
+    </div>
+
+    <div class="panel" id="resultPanel" style="display:none;">
+        <h3>✅ Customer Added</h3>
+        <div class="infoRow"><b>Customer ID</b><span id="resultId">-</span></div>
+        <div class="infoRow"><b>Password</b><span id="resultPassword">-</span></div>
+        <p class="subText" style="margin-top:10px;">Share these details with the customer securely.</p>
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/add-customer.js"></script>
+
+</body>
+
+</html>

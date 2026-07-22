@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard • HR Capital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="shell">
+
+    <div class="adminHeader">
+        <div>
+            <h1>Admin Dashboard</h1>
+            <p class="subText">Welcome back, Admin</p>
+        </div>
+        <button class="backBtn" id="logoutBtn" title="Logout">⎋</button>
+    </div>
+
+    <div class="statGrid">
+
+        <div class="panel statCard">
+            <p class="small">Total Customers</p>
+            <h1 id="totalUsers" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+        <div class="panel statCard">
+            <p class="small">Total HR Issued</p>
+            <h1 id="totalHR" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+        <div class="panel statCard highlight" id="pendingStatCard">
+            <p class="small">Pending Requests</p>
+            <h1 id="pendingRequests" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+        <div class="panel statCard">
+            <p class="small">Approved</p>
+            <h1 id="approvedRequests" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+        <div class="panel statCard">
+            <p class="small">Rejected</p>
+            <h1 id="rejectedRequests" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+        <div class="panel statCard">
+            <p class="small">Today's Recharge</p>
+            <h1 id="todaysRecharge" class="mono">
+                <span class="skeleton skeletonNum"></span>
+            </h1>
+        </div>
+
+    </div>
+
+    <div class="menu">
+
+        <button class="menuBtn requestsBtn" id="rechargeRequestsBtn">
+            <span class="menuIcon">📥</span>
+            Recharge Requests
+            <span class="menuBadge" id="requestsBadge" style="display:none;">0</span>
+        </button>
+
+        <button class="menuBtn" id="addCustomer">
+            <span class="menuIcon">👤</span>
+            Add Customer
+        </button>
+
+        <button class="menuBtn" id="customerDetails">
+            <span class="menuIcon">📋</span>
+            Customer Details
+        </button>
+
+        <button class="menuBtn" id="addRecharge">
+            <span class="menuIcon">⚡</span>
+            Add Recharge
+        </button>
+
+        <button class="menuBtn" id="rechargeHistory">
+            <span class="menuIcon">📜</span>
+            Recharge History
+        </button>
+
+        <button class="menuBtn" id="leaderboardBtn">
+            <span class="menuIcon">🏆</span>
+            Leaderboard
+        </button>
+
+        <button class="menuBtn" id="giveScratchBtn">
+            <span class="menuIcon">🎁</span>
+            Give Scratch Card
+        </button>
+
+        <button class="menuBtn" id="paymentSettingsBtn">
+            <span class="menuIcon">💳</span>
+            Payment Settings
+        </button>
+
+        <button class="menuBtn" id="hrSettingsBtn">
+            <span class="menuIcon">⚙️</span>
+            HR Settings
+        </button>
+
+        <button class="menuBtn" id="sendNotifBtn">
+            <span class="menuIcon">📢</span>
+            Send Notification
+        </button>
+
+        <button class="menuBtn" id="sellVoucherBtn">
+            <span class="menuIcon">🎫</span>
+            Sell Voucher
+        </button>
+
+    </div>
+
+    <div class="footer">© 2026 HR Capital Rewards Program</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="Js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

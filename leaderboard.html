@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Leaderboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/leaderboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <button class="backBtn" onclick="history.back()">←</button>
+
+        <h1>🏆 Leaderboard</h1>
+
+        <p>Top HR Capital Members</p>
+
+    </div>
+    
+<h2 class="podiumTitle">🏆 Top 3 Champions</h2>
+
+    <div class="topCard">
+
+        <div class="medal gold">
+            🥇
+            <h3 id="firstName">-</h3>
+            <p id="firstHR">0 HR</p>
+        </div>
+
+        <div class="medal silver">
+            🥈
+            <h3 id="secondName">-</h3>
+            <p id="secondHR">0 HR</p>
+        </div>
+
+        <div class="medal bronze">
+            🥉
+            <h3 id="thirdName">-</h3>
+            <p id="thirdHR">0 HR</p>
+        </div>
+
+    </div>
+
+    <div id="leaderboardList"></div>
+
+</div>
+
+<script type="module" src="Js/leaderboard.js"></script>
+
+</body>
+</html>

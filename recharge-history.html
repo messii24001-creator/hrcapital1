@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recharge History</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/recharge-history.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="topCard">
+
+        <button class="backBtn" onclick="history.back()">
+            ←
+        </button>
+
+        <h1>Recharge History</h1>
+
+        <p>Your Recharge Records</p>
+
+    </div>
+
+
+    <!-- Summary -->
+
+    <div class="summary">
+
+        <div class="summaryCard">
+
+            <div class="icon">📦</div>
+
+            <h3>Total Recharge</h3>
+
+            <h2 id="totalRecharge">0</h2>
+
+        </div>
+
+
+        <div class="summaryCard">
+
+            <div class="icon">⭐</div>
+
+            <h3>Total HR Earned</h3>
+
+            <h2 id="totalHR">0 HR</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- Recharge List -->
+
+    <div id="historyList">
+
+    </div>
+
+</div>
+
+<script type="module" src="Js/recharge-history.js"></script>
+
+</body>
+
+</html>
