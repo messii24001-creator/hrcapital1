@@ -28,15 +28,16 @@ export async function sendTelegramAlert(message) {
 
   try {
 
-    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: TELEGRAM_CHAT_ID,
-        text: message,
-        parse_mode: "HTML"
-      })
-    });
+    const url =
+      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage` +
+      `?chat_id=${encodeURIComponent(TELEGRAM_CHAT_ID)}` +
+      `&text=${encodeURIComponent(message)}` +
+      `&parse_mode=HTML`;
+
+    // A plain GET request never triggers a CORS "preflight" (unlike
+    // POST + a JSON body), so this avoids a class of silent
+    // cross-origin failures some browsers hit against Telegram's API.
+    await fetch(url);
 
   } catch (e) {
     console.error("Telegram alert failed:", e);
