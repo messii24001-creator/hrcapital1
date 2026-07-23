@@ -11,6 +11,8 @@ import {
   serverTimestamp
 } from "./firebase.js";
 
+import { sendTelegramAlert } from "./telegram-notify.js";
+
 await authReady;
 
 const mobile = localStorage.getItem("userMobile");
@@ -303,6 +305,15 @@ async function submitRequest(paymentMethod, paymentStatus, btn) {
     document.getElementById("step2").style.display = "none";
     document.getElementById("step3").style.display = "block";
 
+    sendTelegramAlert(
+      `🔔 <b>New Recharge Request</b>\n` +
+      `👤 ${customer.name} (${customer.mobile})\n` +
+      `📱 ${requestData.rechargeNumber} — ${requestData.operator}\n` +
+      `💰 ₹${requestData.amount} • 🔻 ${requestData.hrRedeemed} HR redeemed\n` +
+      `💵 You receive: ₹${requestData.cashPaid}\n` +
+      `💳 Payment: ${paymentMethod} — ${paymentStatus}`
+    );
+
   } catch (e) {
     console.error(e);
     showToast("Failed to submit request. Please try again.");
@@ -324,3 +335,4 @@ document.getElementById("cashConfirmBtn").onclick = () => {
 };
 
 loadData();
+        
