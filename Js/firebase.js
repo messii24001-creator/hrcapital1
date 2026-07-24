@@ -23,13 +23,6 @@ import {
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-storage.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyCmbNc9M0WsB0Fg1Vh8TofGQQRiPdDM-Jg",
   authDomain: "hr-capital-7d2ad.firebaseapp.com",
@@ -42,7 +35,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-const storage = getStorage(app);
 
 // Every page that talks to Firestore first needs an authenticated
 // session (Firestore Security Rules require request.auth != null).
@@ -65,10 +57,6 @@ export {
   db,
   auth,
   authReady,
-  storage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
   collection,
   getDocs,
   getDoc,
