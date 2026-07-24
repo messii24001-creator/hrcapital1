@@ -5,12 +5,10 @@ import {
   authReady,
   doc,
   getDoc,
-  setDoc,
-  storage,
-  ref,
-  uploadBytes,
-  getDownloadURL
+  setDoc
 } from "./firebase.js";
+
+import { uploadImageToCloudinary } from "./cloudinary-upload.js";
 
 await authReady;
 
@@ -93,15 +91,12 @@ saveBtn.onclick = async () => {
   let qrFailed = false;
 
   // QR upload is optional and kept separate from the main save —
-  // if Firebase Storage isn't set up on this project (Spark/free
-  // plan doesn't include it), the QR just won't upload, but the
-  // UPI ID / instructions / toggles below still save fine.
+  // if Cloudinary isn't configured, the QR just won't upload, but
+  // the UPI ID / instructions / toggles below still save fine.
   if (selectedFile) {
 
     try {
-      const storageRef = ref(storage, "payment/qr.jpg");
-      await uploadBytes(storageRef, selectedFile);
-      qrImageUrl = await getDownloadURL(storageRef);
+      qrImageUrl = await uploadImageToCloudinary(selectedFile);
     } catch (e) {
       console.error("QR upload failed:", e);
       qrFailed = true;
