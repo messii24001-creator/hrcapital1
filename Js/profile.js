@@ -6,12 +6,10 @@ import {
   query,
   where,
   updateDoc,
-  doc,
-  storage,
-  ref,
-  uploadBytes,
-  getDownloadURL
+  doc
 } from "./firebase.js";
+
+import { uploadImageToCloudinary } from "./cloudinary-upload.js";
 
 await authReady;
 
@@ -147,18 +145,14 @@ saveBtn.onclick = async () => {
   }
 
   // Photo upload is optional and kept separate from the main save —
-  // if Firebase Storage isn't set up on this project (Spark/free
-  // plan doesn't include it), the photo just won't upload, but the
-  // name/email/password changes below still go through.
+  // if Cloudinary isn't configured, the photo just won't upload,
+  // but the name/email/password changes below still go through.
   let photoFailed = false;
 
   if (selectedPhoto) {
 
     try {
-      const fileName = (customer.customerId || mobile) + ".jpg";
-      const storageRef = ref(storage, "profiles/" + fileName);
-      await uploadBytes(storageRef, selectedPhoto);
-      updates.photoUrl = await getDownloadURL(storageRef);
+      updates.photoUrl = await uploadImageToCloudinary(selectedPhoto);
     } catch (e) {
       console.error("Photo upload failed:", e);
       photoFailed = true;
